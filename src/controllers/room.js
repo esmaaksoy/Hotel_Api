@@ -1,7 +1,5 @@
 "use strict"
 
-// Room Controller:
-
 const Room = require('../models/room')
 
 module.exports = {
