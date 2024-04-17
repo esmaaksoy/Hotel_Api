@@ -37,6 +37,11 @@ module.exports = {
             const roomData= await Room.findOne({_id:req.body.roomId})
             req.body.price=roomData.price
         }
+
+        if (!req.user.isAdmin) {
+            delete req.body.price
+        }
+
         const data = await Reservation.create(req.body)
        
 
@@ -66,6 +71,13 @@ module.exports = {
             #swagger.tags = ["Reservations"]
             #swagger.summary = "Update Reservation"
         */
+
+            if (!req.user.isAdmin) {
+                delete req.body.userId
+                delete req.body.price
+            }
+
+
 
         const data = await Reservation.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 
