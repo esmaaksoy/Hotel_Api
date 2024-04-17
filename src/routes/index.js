@@ -9,7 +9,7 @@ router.use('/users', require('./user'))
 router.use('/tokens', require('./token'))
 
 
-router.use('/reservationss', require('./reservation'))
+router.use('/reservations', require('./reservation'))
 
 router.use('/rooms', require('./room'))
 
