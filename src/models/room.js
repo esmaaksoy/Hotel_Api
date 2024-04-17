@@ -9,7 +9,13 @@ const RoomSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    images: [],
+    images: [
+      {
+        type: String,
+        trim: true,
+        required: true,
+      },
+    ],
     bedType: {
       type: Number,
       required: true,

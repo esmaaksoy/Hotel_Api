@@ -1,8 +1,4 @@
 "use strict"
-/* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
-------------------------------------------------------- */
-// passwordEncrypt(password:string):
 
 const crypto = require('node:crypto'),
     keyCode = process.env.SECRET_KEY,

@@ -9,16 +9,19 @@ const ReservationSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+
     roomId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Room",
       required: true,
     },
+
     arrivalDate: {
       type: Date,
       required: true,
       default: Date.now(),
     },
+
     departureDate: {
       type: Date,
       required: true,
@@ -29,10 +32,12 @@ const ReservationSchema = new mongoose.Schema(
         message: "departureDate must be later than arrivalDate",
       },
     },
+
     guestNumber: {
       type: Number,
       default: 1,
     },
+
     night: {
       type: Number,
       get: function () {
@@ -46,6 +51,7 @@ const ReservationSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    
     totalPrice: {
       type: Number,
       default: function () {
