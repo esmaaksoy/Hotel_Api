@@ -51,7 +51,7 @@ const ReservationSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    
+
     totalPrice: {
       type: Number,
       default: function () {

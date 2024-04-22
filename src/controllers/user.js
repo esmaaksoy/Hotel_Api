@@ -75,7 +75,7 @@ module.exports = {
 
     if (!req.user.isAdmin) {
       filter = { _id: req.user._id };
-      delete req.body.isAdmin
+      delete req.body.isAdmin;
     }
 
     const data = await User.updateOne(

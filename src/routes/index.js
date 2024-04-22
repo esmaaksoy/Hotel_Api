@@ -1,19 +1,17 @@
-"use strict"
+"use strict";
 
-const router = require('express').Router()
+const router = require("express").Router();
 
-router.use('/auth', require('./auth'))
+router.use("/auth", require("./auth"));
 
-router.use('/users', require('./user'))
+router.use("/users", require("./user"));
 
-router.use('/tokens', require('./token'))
+router.use("/tokens", require("./token"));
 
+router.use("/reservations", require("./reservation"));
 
-router.use('/reservations', require('./reservation'))
+router.use("/rooms", require("./room"));
 
-router.use('/rooms', require('./room'))
+router.use("/documents", require("./document"));
 
-
-router.use('/documents', require('./document'))
-
-module.exports = router
+module.exports = router;

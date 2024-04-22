@@ -1,11 +1,10 @@
-"use strict"
+"use strict";
 
-const Room = require('../models/room')
+const Room = require("../models/room");
 
 module.exports = {
-
-    list: async (req, res) => {
-        /*
+  list: async (req, res) => {
+    /*
             #swagger.tags = ["Rooms"]
             #swagger.summary = "List Rooms"
             #swagger.description = `
@@ -19,71 +18,73 @@ module.exports = {
             `
         */
 
-        const data = await res.getModelList(Room)
+    const data = await res.getModelList(Room);
 
-        res.status(200).send({
-            error: false,
-            details: await res.getModelListDetails(Room),
-            data
-        })
-    },
+    res.status(200).send({
+      error: false,
+      details: await res.getModelListDetails(Room),
+      data,
+    });
+  },
 
-    // CRUD:
+  // CRUD:
 
-    create: async (req, res) => {
-        /*
+  create: async (req, res) => {
+    /*
             #swagger.tags = ["Rooms"]
             #swagger.summary = "Create Room"
         */
 
-        const data = await Room.create(req.body)
+    const data = await Room.create(req.body);
 
-        res.status(201).send({
-            error: false,
-            data
-        })
-    },
+    res.status(201).send({
+      error: false,
+      data,
+    });
+  },
 
-    read: async (req, res) => {
-        /*
+  read: async (req, res) => {
+    /*
             #swagger.tags = ["Rooms"]
             #swagger.summary = "Get Single Room"
         */
 
-        const data = await Room.findOne({ _id: req.params.id })
+    const data = await Room.findOne({ _id: req.params.id });
 
-        res.status(200).send({
-            error: false,
-            data
-        })
-    },
+    res.status(200).send({
+      error: false,
+      data,
+    });
+  },
 
-    update: async (req, res) => {
-        /*
+  update: async (req, res) => {
+    /*
             #swagger.tags = ["Rooms"]
             #swagger.summary = "Update Room"
         */
 
-        const data = await Room.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
+    const data = await Room.updateOne({ _id: req.params.id }, req.body, {
+      runValidators: true,
+    });
 
-        res.status(202).send({
-            error: false,
-            data,
-            new: await Room.findOne({ _id: req.params.id })
-        })
-    },
+    res.status(202).send({
+      error: false,
+      data,
+      new: await Room.findOne({ _id: req.params.id }),
+    });
+  },
 
-    delete: async (req, res) => {
-        /*
+  delete: async (req, res) => {
+    /*
             #swagger.tags = ["Rooms"]
             #swagger.summary = "Delete Room"
         */
 
-        const data = await Room.deleteOne({ _id: req.params.id })
+    const data = await Room.deleteOne({ _id: req.params.id });
 
-        res.status(data.deletedCount ? 204 : 404).send({
-            error: !data.deletedCount,
-            data
-        })
-    }
-}
+    res.status(data.deletedCount ? 204 : 404).send({
+      error: !data.deletedCount,
+      data,
+    });
+  },
+};

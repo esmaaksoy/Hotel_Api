@@ -1,7 +1,6 @@
 "use strict";
 
 module.exports = {
-  
   isLogin: (req, res, next) => {
     if (req.user && req.user.isActive) {
       next();
@@ -10,7 +9,7 @@ module.exports = {
       throw new Error("NoPermission: You must login.");
     }
   },
-  
+
   isAdmin: (req, res, next) => {
     if (req.user && req.user.isActive && req.user.isAdmin) {
       next();
