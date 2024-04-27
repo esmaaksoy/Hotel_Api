@@ -7,6 +7,8 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env?.PORT || 8000;
 
+app.set("view engine", "ejs");
+
 // asyncErrors to errorHandler:
 require("express-async-errors");
 
@@ -31,23 +33,13 @@ app.use(require("./src/middlewares/queryHandler"));
 // Routes:
 
 // routes/index.js:
-app.use("/", require("./src/routes/"));
+app.use("/api", require("./src/routes/api"));
+
+app.use("/views", require("./views/routes/views"));
 
 // HomePath:
 app.all("/", (req, res) => {
-  res.send({
-    error: false,
-    message: "Welcome to Hotel API",
-    docs: {
-      swagger: "/documents/swagger",
-      redoc: "/documents/redoc",
-      json: "/documents/json",
-    },
-    user: req.user,
-   
-  });
-   
-
+  res.redirect("./views");
 });
 
 // errorHandler:
