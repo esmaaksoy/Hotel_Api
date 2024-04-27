@@ -1,10 +1,10 @@
 ## Hotel Reservation
 This is a hotel reservation application. In this application, you can create user accounts. After logging in, you can make reservations for existing rooms. If you are an admin, you can perform CRUD operations for users, rooms, and reservations.
 
-[Hotel Api Live Page]()
+[Hotel Api Live Page](https://hotel-api-c5y0.onrender.com/)
 <br><br>
 If you prefer to see Redoc or JSON instead of Swagger, simply replace 'swagger' in the endpoint with 'redoc' or 'json'.<br>
-[Swagger Documents]()
+[Swagger Documents](https://hotel-api-c5y0.onrender.com/documents/swagger/)
 
 ## Project Skeleton
 
