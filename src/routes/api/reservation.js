@@ -2,7 +2,7 @@
 
 const router = require("express").Router();
 
-const reservation = require("../../controllers/reservation");
+const reservation = require("../../controllers/api/reservation");
 const permissions = require("../../middlewares/permissions");
 
 router
