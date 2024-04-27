@@ -16,6 +16,8 @@ module.exports = async (req, res, next) => {
       req.user = tokenData ? tokenData.userId : undefined;
     }
 
-    next();
+   
   }
+
+  next();
 };

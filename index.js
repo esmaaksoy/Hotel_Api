@@ -37,14 +37,17 @@ app.use("/", require("./src/routes/"));
 app.all("/", (req, res) => {
   res.send({
     error: false,
-    message: "Welcome to PIZZA API",
+    message: "Welcome to Hotel API",
     docs: {
       swagger: "/documents/swagger",
       redoc: "/documents/redoc",
       json: "/documents/json",
     },
     user: req.user,
+   
   });
+   
+
 });
 
 // errorHandler:
