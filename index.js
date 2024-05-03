@@ -33,9 +33,7 @@ app.use(require("./src/middlewares/queryHandler"));
 // Routes:
 
 // routes/index.js:
-app.use("/api", require("./src/routes/api"));
-
-app.use("/views", require("./views/routes/views"));
+app.use("/", require("./src/routes"));
 
 // HomePath:
 app.all("/", (req, res) => {
