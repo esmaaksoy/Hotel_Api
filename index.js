@@ -35,11 +35,11 @@ app.use(require("./src/middlewares/queryHandler"));
 // routes/index.js:
 app.use("/api", require("./src/routes/api"));
 
-app.use("/views", require("./src/routes/views"));
+app.use("/views", require("./views/routes/views"));
 
 // HomePath:
 app.all("/", (req, res) => {
-  res.redirect("/views/rooms");
+  res.redirect("./views");
 });
 
 // errorHandler:

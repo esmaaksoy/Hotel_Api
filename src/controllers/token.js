@@ -1,6 +1,6 @@
 "use strict";
 
-const Token = require("../../models/token");
+const Token = require("../models/token");
 
 module.exports = {
   list: async (req, res) => {

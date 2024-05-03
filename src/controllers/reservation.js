@@ -1,7 +1,7 @@
 "use strict";
 
-const Reservation = require("../../models/reservation");
-const Room = require("../../models/room");
+const Reservation = require("../models/reservation");
+const Room = require("../models/room");
 module.exports = {
   list: async (req, res) => {
     /*
@@ -25,7 +25,6 @@ module.exports = {
       details: await res.getModelListDetails(Reservation),
       data,
     });
-    
   },
 
   create: async (req, res) => {

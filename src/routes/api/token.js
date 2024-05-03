@@ -2,7 +2,7 @@
 
 const router = require("express").Router();
 
-const token = require("../../controllers/api/token");
+const token = require("../../controllers/token");
 
 const { isAdmin } = require("../../middlewares/permissions");
 router.use(isAdmin);

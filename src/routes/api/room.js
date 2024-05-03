@@ -2,7 +2,7 @@
 
 const router = require("express").Router();
 
-const room = require("../../controllers/api/room");
+const room = require("../../controllers/room");
 const permissions = require("../../middlewares/permissions");
 
 router.route("/").get(room.list).post(permissions.isAdmin, room.create);
